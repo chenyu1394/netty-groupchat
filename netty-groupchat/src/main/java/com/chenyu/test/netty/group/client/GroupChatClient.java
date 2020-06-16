@@ -41,6 +41,9 @@ public class GroupChatClient {
                         protected void initChannel(SocketChannel ch) throws Exception {
                             //获取pipeLine对象
                             ChannelPipeline pipeline = ch.pipeline();
+                            ByteBuf byteBuf = Unpooled.copiedBuffer("$_".getBytes());
+                            pipeline.addLast(
+                                    new DelimiterBasedFrameDecoder(1024,byteBuf));
                             //添加字符串编码解码器
                             pipeline.addLast(new StringDecoder());
                             pipeline.addLast(new StringEncoder());
@@ -53,11 +56,11 @@ public class GroupChatClient {
             if(f.isSuccess()){
                 Channel channel = f.channel();
                 Scanner scanner = new Scanner(System.in);
-            String message;
-            while (scanner.hasNextLine()){
-                message = scanner.nextLine();
-                channel.writeAndFlush(message);
-            }
+                String message;
+                while (scanner.hasNextLine()){
+                    message = scanner.nextLine();
+                    channel.writeAndFlush(message+"$_");
+                }
             }
             f.channel().closeFuture().sync();
         }finally {
@@ -66,4 +69,7 @@ public class GroupChatClient {
 
     }
 
+    public static void main(String[] args) throws Exception {
+        new GroupChatClient().run("127.0.0.1",8090);
+    }
 }

@@ -40,6 +40,9 @@ public class GroupChatServer {
                         protected void initChannel(SocketChannel ch) throws Exception {
                             //获取pipeLine对象
                             ChannelPipeline pipeline = ch.pipeline();
+                            ByteBuf byteBuf = Unpooled.copiedBuffer("$_".getBytes());
+                            pipeline.addLast(
+                                    new DelimiterBasedFrameDecoder(1024,byteBuf));
                             //添加字符串编码解码器
                             pipeline.addLast(new StringDecoder());
                             pipeline.addLast(new StringEncoder());
@@ -62,4 +65,5 @@ public class GroupChatServer {
         }
 
     }
+
 }

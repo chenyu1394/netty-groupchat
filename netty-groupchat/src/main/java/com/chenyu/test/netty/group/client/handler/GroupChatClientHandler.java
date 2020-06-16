@@ -1,8 +1,9 @@
 package com.chenyu.test.netty.group.client.handler;
-
-import com.chenyu.test.netty.group.client.GroupChatClient;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+
+import java.util.Scanner;
 
 /**
  * 客户端IO事件处理类
@@ -24,4 +25,14 @@ public class GroupChatClientHandler extends SimpleChannelInboundHandler<String> 
         cause.printStackTrace();
         ctx.close();
     }
+
+    /*@Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        Channel channel = ctx.channel();
+        for(int i = 0;i < 20;i++){
+            channel.write(i+"你好，欢迎使用netty$_");
+        }
+        channel.flush();
+    }*/
+
 }

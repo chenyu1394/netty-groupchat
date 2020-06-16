@@ -21,6 +21,7 @@ public class GroupChatServerHandler extends SimpleChannelInboundHandler<String> 
      */
     private static ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
+    private int count;
     /**
      * 接收到消息事件
      * 将消息转发给其他客户端的socketChannel
@@ -28,17 +29,18 @@ public class GroupChatServerHandler extends SimpleChannelInboundHandler<String> 
     @Override
     protected void messageReceived(ChannelHandlerContext ctx, String msg) throws Exception {
         Channel channel = ctx.channel();
-        System.out.println(channel.remoteAddress()+"："+msg);
+        System.out.println(channel.remoteAddress()+"："+msg
+                +"   "+ DATE_TIME_FORMATTER.format(LocalDateTime.now()));
         //遍历channelGroup，若不是当前channel则转化消息
         for (Channel ch : channelGroup){
             if(ch != channel){
                 ch.writeAndFlush(channel.remoteAddress() + "："+
-                       msg +"   "+ DATE_TIME_FORMATTER.format(LocalDateTime.now()));
+                       msg +"   "+ DATE_TIME_FORMATTER.format(LocalDateTime.now())+"$_");
             }
         }
         //回显自己发送的消息
         channel.writeAndFlush("我："+msg+"   "
-                + DATE_TIME_FORMATTER.format(LocalDateTime.now()));
+                + DATE_TIME_FORMATTER.format(LocalDateTime.now())+"$_");
     }
 
     /**
@@ -49,7 +51,7 @@ public class GroupChatServerHandler extends SimpleChannelInboundHandler<String> 
         Channel channel = ctx.channel();
         //该方法会将 channelGroup 中所有的channel 遍历，并发送 消息，我们不需要自己遍历
         channelGroup.writeAndFlush("[客户端]" + channel.remoteAddress() +
-                " 加入聊天" + DATE_TIME_FORMATTER.format(LocalDateTime.now()));
+                " 加入聊天" + DATE_TIME_FORMATTER.format(LocalDateTime.now())+"$_");
         channelGroup.add(channel);
     }
 
@@ -63,7 +65,7 @@ public class GroupChatServerHandler extends SimpleChannelInboundHandler<String> 
         for (Channel ch : channelGroup){
             if(ch != channel){
                 ch.writeAndFlush(channel.remoteAddress() + "："+
-                        "离开了聊天室" +"   "+ DATE_TIME_FORMATTER.format(LocalDateTime.now()));
+                        "离开了聊天室" +"   "+ DATE_TIME_FORMATTER.format(LocalDateTime.now())+"$_");
             }
         }
     }
