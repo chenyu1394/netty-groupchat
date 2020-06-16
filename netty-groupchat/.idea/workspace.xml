@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00b152fd-761e-4974-a2a3-e5f81a617044" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.1-bin/maven" />
+        <option name="userSettingsFile" value="D:\Java\apache-maven-3.6.1-bin\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1dNmgnRuM0OeVH0aiaHWVH27s8K" />
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.AppTest.serverTest">
+    <configuration name="GroupChatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chenyu.test.netty.group.client.GroupChatClient" />
+      <module name="netty-groupchat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chenyu.test.netty.group.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupChatClientHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chenyu.test.netty.group.client.handler.GroupChatClientHandler" />
+      <module name="netty-groupchat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chenyu.test.netty.group.client.handler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chenyu.test.netty.group.server.GroupChatServer" />
+      <module name="netty-groupchat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chenyu.test.netty.group.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.clientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="netty-groupchat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chenyu.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chenyu.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chenyu.test.AppTest" />
+      <option name="METHOD_NAME" value="clientTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.serverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="netty-groupchat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chenyu.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chenyu.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chenyu.test.AppTest" />
+      <option name="METHOD_NAME" value="serverTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest.serverTest" />
+        <item itemvalue="Application.GroupChatClientHandler" />
+        <item itemvalue="Application.GroupChatClient" />
+        <item itemvalue="Application.GroupChatServer" />
+        <item itemvalue="JUnit.AppTest.clientTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00b152fd-761e-4974-a2a3-e5f81a617044" name="Default Changelist" comment="" />
+      <created>1592274038116</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592274038116</updated>
+    </task>
+    <servers />
+  </component>
+</project>
