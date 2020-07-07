@@ -11,6 +11,11 @@ import java.util.Scanner;
  * */
 public class GroupChatClientHandler extends SimpleChannelInboundHandler<String> {
 
+    private String userName;
+    public GroupChatClientHandler(String userName){
+        this.userName = userName;
+    }
+
     /**
      * 客户端接收到消息
      * */
@@ -26,13 +31,9 @@ public class GroupChatClientHandler extends SimpleChannelInboundHandler<String> 
         ctx.close();
     }
 
-    /*@Override
+    @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        Channel channel = ctx.channel();
-        for(int i = 0;i < 20;i++){
-            channel.write(i+"你好，欢迎使用netty$_");
-        }
-        channel.flush();
-    }*/
+      ctx.writeAndFlush(userName+"$_");
+    }
 
 }

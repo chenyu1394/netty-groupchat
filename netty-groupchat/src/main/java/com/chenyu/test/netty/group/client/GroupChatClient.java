@@ -27,8 +27,9 @@ public class GroupChatClient {
      * 聊天
      * @param host 服务器地址
      * @param port 服务端监听端口
+     * @param userName 客户端名字
      * */
-    public void run(String host,int port) throws Exception{
+    public void run(String userName,String host,int port) throws Exception{
         //创建工作线程组
         NioEventLoopGroup group = new NioEventLoopGroup();
         try{
@@ -48,7 +49,7 @@ public class GroupChatClient {
                             pipeline.addLast(new StringDecoder());
                             pipeline.addLast(new StringEncoder());
                             //添加自定义的handler
-                            pipeline.addLast(new GroupChatClientHandler());
+                            pipeline.addLast(new GroupChatClientHandler(userName));
                         }
                     });
             //连接到服务器,同步
@@ -70,6 +71,6 @@ public class GroupChatClient {
     }
 
     public static void main(String[] args) throws Exception {
-        new GroupChatClient().run("127.0.0.1",8090);
+        new GroupChatClient().run("陈宇","127.0.0.1",8090);
     }
 }
